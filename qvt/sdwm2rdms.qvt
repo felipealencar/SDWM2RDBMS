@@ -1,0 +1,13 @@
+
+transformation sdwm2rdbms(sdw:sdwm, rdbms:SimpleRDBMS) {
+
+	-- map each schema to a schema
+	top relation SchemaToSchema {
+	  checkonly domain sdw p : sdwm::Schema {
+	  };
+	  enforce domain rdbms s : SimpleRDBMS::RdbmsSchema {
+	  	  rdbmsName = 'SDW'
+	  };
+	}
+	
+	}

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdwm2rdbms:SchemaToSchema xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:sdwm2rdbms="urn:sdwm2rdbms.ecore">
+  <p href="../metamodel/source.xmi#/"/>
+  <s href="target.xmi#_FseXEGDQEeOdZqvos7U7FA"/>
+</sdwm2rdbms:SchemaToSchema>

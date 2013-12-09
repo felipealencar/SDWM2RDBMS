@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdwm:Schema xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdwm="sdwm" xsi:schemaLocation="sdwm sdwm.ecore">
+  <tables xsi:type="sdwm:Dimension" name="DATE">
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="YEAR"/>
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="SEMESTER"/>
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="QUARTER"/>
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="MONTH"/>
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="WEEK"/>
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="WEEK_DAY"/>
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="DAY"/>
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="DATE" type="DATE"/>
+  </tables>
+  <tables xsi:type="sdwm:Fact" name="HOMICIDE">
+    <measures xsi:type="sdwm:ConventionalMeasure" name="DEFENDANT_QUANTITY"/>
+    <measures xsi:type="sdwm:ConventionalMeasure" name="VICTIM_QUANTITY"/>
+    <measures xsi:type="sdwm:SpatialMeasure" name="PLACE"/>
+    <measures xsi:type="sdwm:ConventionalAttribute" name="TYPE" type="STRING"/>
+    <measures xsi:type="sdwm:DegeneratedDimension" name="CASE_NUMBER"/>
+  </tables>
+  <tables xsi:type="sdwm:Dimension" name="VICTIM">
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="NAME" type="STRING"/>
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="SURNAME" type="STRING"/>
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="NICKNAME" type="STRING"/>
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="GENDER" type="STRING"/>
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="AGE_GROUP"/>
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="EDUCATION" type="STRING"/>
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="CLASS" type="STRING"/>
+    <attributes xsi:type="sdwm:SpatialAttribute" name="COUNTRY" type="MULTIPOLYGON" isNormalized="true" isShared="true"/>
+    <attributes xsi:type="sdwm:SpatialAttribute" name="REGION" type="MULTIPOLYGON" isNormalized="true" isShared="true"/>
+    <attributes xsi:type="sdwm:SpatialAttribute" name="STATE" type="MULTIPOLYGON" isNormalized="true" isShared="true"/>
+    <attributes xsi:type="sdwm:SpatialAttribute" name="CITY" type="MULTIPOLYGON" isNormalized="true" isShared="true"/>
+    <attributes xsi:type="sdwm:SpatialAttribute" name="DISTRICT" type="POLYGON" isNormalized="true" isShared="true"/>
+    <attributes xsi:type="sdwm:SpatialAttribute" name="ADDRESS"/>
+  </tables>
+  <tables xsi:type="sdwm:Dimension" name="DEFENDANT">
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="NAME" type="STRING"/>
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="SURNAME" type="STRING"/>
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="NICKNAME" type="STRING"/>
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="GENDER" type="STRING"/>
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="AGE_GROUP"/>
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="EDUCATION" type="STRING"/>
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="CLASS" type="STRING"/>
+    <attributes xsi:type="sdwm:SpatialAttribute" name="COUNTRY" type="MULTIPOLYGON" isNormalized="true" isShared="true"/>
+    <attributes xsi:type="sdwm:SpatialAttribute" name="REGION" type="MULTIPOLYGON" isNormalized="true" isShared="true"/>
+    <attributes xsi:type="sdwm:SpatialAttribute" name="STATE" type="MULTIPOLYGON" isNormalized="true" isShared="true"/>
+    <attributes xsi:type="sdwm:SpatialAttribute" name="CITY" type="MULTIPOLYGON" isNormalized="true" isShared="true"/>
+    <attributes xsi:type="sdwm:SpatialAttribute" name="DISTRICT" type="POLYGON" isNormalized="true" isShared="true"/>
+    <attributes xsi:type="sdwm:SpatialAttribute" name="ADDRESS"/>
+  </tables>
+  <tables xsi:type="sdwm:Bridge" name="ARMS">
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="WEIGHT_FACTOR" type="STRING"/>
+  </tables>
+  <tables xsi:type="sdwm:Dimension" name="ARM">
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="TYPE" type="STRING"/>
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="CATEGORY" type="STRING"/>
+    <attributes xsi:type="sdwm:ConventionalAttribute" name="SUBCATEGORY" type="STRING"/>
+  </tables>
+  <relationships source="//@tables.0" target="//@tables.1" cardinality="ONE_TO_MANY" role="CASE_RECORD_DATE"/>
+  <relationships source="//@tables.0" target="//@tables.1" cardinality="ONE_TO_MANY" role="HOMICIDE_DATE"/>
+  <relationships source="//@tables.2" target="//@tables.1" cardinality="MANY_TO_MANY"/>
+  <relationships source="//@tables.1" target="//@tables.3" cardinality="MANY_TO_MANY"/>
+  <relationships source="//@tables.4" target="//@tables.1" cardinality="ONE_TO_MANY"/>
+  <relationships source="//@tables.5" target="//@tables.4" cardinality="ONE_TO_MANY"/>
+</sdwm:Schema>
