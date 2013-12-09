@@ -10,4 +10,75 @@ transformation sdwm2rdbms(sdw:sdwm, rdbms:SimpleRDBMS) {
 	  };
 	}
 	
+	top relation BridgeToTable{
+	
+	  bridgeName: String;
+	  
+	  checkonly domain sdw bridge: sdwm::Bridge{
+	     schema = schemaSDWM4 : sdwm::Schema {
+	     },
+	     
+	     name = bridgeName
+	  };
+	
+	  enforce domain rdbms table: SimpleRDBMS::RdbmsTable{
+	    rdbmsSchema = schemaRDBMS4 : SimpleRDBMS::RdbmsSchema {
+	    },
+	    
+	    rdbmsName = bridgeName
+	  };
+	  
+	  when {
+	    SchemaToSchema(schemaSDWM4, schemaRDBMS4);
+	  }
 	}
+	
+	top relation FactToTable{
+	
+	  factName: String;
+	
+	  checkonly domain sdw fact: sdwm::Fact { 
+	     schema = schemaSDWM2 : sdwm::Schema {
+	     },
+	  
+	  	 name = factName
+	  };
+	  
+	  enforce domain rdbms table: SimpleRDBMS::RdbmsTable{
+	    rdbmsSchema = schemaRDBMS2 : SimpleRDBMS::RdbmsSchema {
+	    },
+	    
+	    rdbmsName = factName
+	  };
+	  
+	  when {
+	    SchemaToSchema(schemaSDWM2, schemaRDBMS2);
+	  }
+	  
+	}
+	
+	top relation DimToTable{
+	
+	  dimName: String;
+	
+	  checkonly domain sdw dimension: sdwm::Dimension { 
+	     schema = schemaSDWM3 : sdwm::Schema {
+	     },
+	  
+	  	 name = dimName
+	  };
+	  
+	  enforce domain rdbms table: SimpleRDBMS::RdbmsTable{
+	    rdbmsSchema = schemaRDBMS3 : SimpleRDBMS::RdbmsSchema {
+	    },
+	    
+	    rdbmsName = dimName 
+
+	  };
+	  
+	   when {
+	    SchemaToSchema(schemaSDWM3, schemaRDBMS3);
+	  }
+	}
+	
+}
