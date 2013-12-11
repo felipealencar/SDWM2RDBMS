@@ -55,7 +55,7 @@
     <attributes xsi:type="sdwm:ConventionalAttribute" name="CATEGORY" type="STRING"/>
     <attributes xsi:type="sdwm:ConventionalAttribute" name="SUBCATEGORY" type="STRING"/>
   </tables>
-  <relationships source="//@tables.0" target="//@tables.1" cardinality="ONE_TO_MANY" role="CASE_RECORD_DATE"/>
+  <relationships source="//@tables.1" target="//@tables.0" role="CASE_RECORD_DATE"/>
   <relationships source="//@tables.0" target="//@tables.1" cardinality="ONE_TO_MANY" role="HOMICIDE_DATE"/>
   <relationships source="//@tables.2" target="//@tables.1" cardinality="MANY_TO_MANY"/>
   <relationships source="//@tables.1" target="//@tables.3" cardinality="MANY_TO_MANY"/>
