@@ -140,8 +140,11 @@ transformation sdwm2rdbms(sdw:sdwm, rdbms:SimpleRDBMS) {
 	  }
 	  
 	  where {
-	    fkn = sName + '_' + r + '_' + tName;
-	    fcn = fkn + '_tid';
+	    fkn = if  r.oclIsUndefined() 
+				then sName + '_' + tName 
+				else sName + '_' + r + '_' + tName 
+			endif; 
+		fcn = fkn + '_tid';
 	  }
 	}
 
@@ -189,8 +192,118 @@ transformation sdwm2rdbms(sdw:sdwm, rdbms:SimpleRDBMS) {
 	  }
 	  
 	  where {
-	    fkn = sName + '_' + r + '_' + tName;
-	    fcn = fkn + '_tid';
+	    fkn = if  r.oclIsUndefined() 
+				then sName + '_' + tName 
+				else sName + '_' + r + '_' + tName 
+			endif; 
+		fcn = fkn + '_tid';
 	  }
-	}	
+	}
+	
+	-- Relações 1-N entre Dimensão e Bridge so podem ser Dimensão como 1 e Fato como N.
+	-- map each association N to 1 between Dimension and Fact to a PK and FK, whe Dimension 
+	-- is the source and Fact is the target of the Relation
+	top relation Rel_1_N_DIM_BRIDGE_One_to_Many {
+	  r : String;
+	  sName: String;
+	  tName : String;
+	  fkn : String;
+	  fcn : String;
+	  
+	  checkonly domain sdw rel: sdwm::Relationship{
+	     schema = schemaSDWM : sdwm::Schema {},
+	     role = r,
+	     cardinality = sdwm::Cardinality::ONE_TO_MANY,
+	     source = s : sdwm::Dimension{ name = sName },
+	     target = t : sdwm::Bridge{ name = tName}
+	  };
+	  
+	  enforce domain rdbms fk : SimpleRDBMS::RdbmsForeignKey {
+	    rdbmsName = fkn,
+	    rdbmsOwner = destTbl : SimpleRDBMS::RdbmsTable {
+	      rdbmsSchema = schemaRDBMS : SimpleRDBMS::RdbmsSchema {},
+	      rdbmsKey = k : SimpleRDBMS::RdbmsKey {
+	      rdbmsColumn = fc : SimpleRDBMS::RdbmsColumn{} --add fc in the PK set
+	    }
+	    },
+	    rdbmsColumn = fc : SimpleRDBMS::RdbmsColumn {
+	      rdbmsName = fcn,
+	      rdbmsType = 'NUMBER',
+	      rdbmsOwner = destTbl
+	    },
+	    rdbmsRefersTo = pKey : SimpleRDBMS::RdbmsKey {
+	      rdbmsOwner = srcTbl : SimpleRDBMS::RdbmsTable {}
+	    }
+	  };
+	  
+	  when {
+	    TableToPkey(s, pKey);
+	    SchemaToSchema(schemaSDWM, schemaRDBMS);
+	    TableToTable(s, srcTbl); 
+	    TableToTable(t, destTbl);
+	  }
+	  
+	  where {
+	  	fkn = if  r.oclIsUndefined() 
+				then sName + '_' + tName 
+				else sName + '_' + r + '_' + tName 
+			endif; 
+		fcn = fkn + '_tid';
+	  }
+	}
+	
+-- Relações 1-N entre Dimensão e Bridge so podem ser Dimensão como 1 e Fato como N.
+	-- map each association N to 1 between Dimension and Fact to a PK and FK, whe Dimension 
+	-- is the source and Fact is the target of the Relation
+	top relation Rel_N_1_BRIDGE_DIM_Many_To_One {
+	  r : String;
+	  sName: String;
+	  tName : String;
+	  fkn : String;
+	  fcn : String;
+	  
+	  checkonly domain sdw rel: sdwm::Relationship{
+	     schema = schemaSDWM : sdwm::Schema {},
+	     role = r,
+	     cardinality = sdwm::Cardinality::MANY_TO_ONE,
+	     source = s : sdwm::Bridge{ name = sName },
+	     target = t : sdwm::Dimension{ name = tName}
+	  };
+	  
+	  enforce domain rdbms fk : SimpleRDBMS::RdbmsForeignKey {
+	    rdbmsName = fkn,
+	    rdbmsOwner = destTbl : SimpleRDBMS::RdbmsTable {
+	      rdbmsSchema = schemaRDBMS : SimpleRDBMS::RdbmsSchema {},
+	      rdbmsKey = k : SimpleRDBMS::RdbmsKey {
+	      rdbmsColumn = fc : SimpleRDBMS::RdbmsColumn{} --add fc in the PK set
+	    }
+	    },
+	    rdbmsColumn = fc : SimpleRDBMS::RdbmsColumn {
+	      rdbmsName = fcn,
+	      rdbmsType = 'NUMBER',
+	      rdbmsOwner = destTbl
+	    },
+	    rdbmsRefersTo = pKey : SimpleRDBMS::RdbmsKey {
+	      rdbmsOwner = srcTbl : SimpleRDBMS::RdbmsTable {}
+	    }
+	  };
+	  
+	  when {
+	    TableToPkey(t, pKey);
+	    SchemaToSchema(schemaSDWM, schemaRDBMS);
+	    TableToTable(t, srcTbl); 
+	    TableToTable(s, destTbl);
+	  }
+	  
+	  where {
+	  	fkn = if  r.oclIsUndefined() 
+				then sName + '_' + tName 
+				else sName + '_' + r + '_' + tName 
+			endif; 
+		fcn = fkn + '_tid';
+	  }
+	}
+	
+	
+		
 }

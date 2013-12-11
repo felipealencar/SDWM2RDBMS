@@ -1,0 +1,36 @@
+1 - SchemaToSchema
+
+2 - TableToTable -> CRIA TABELA COM SUA RESPECTIVA KEY.
+
+3 - RelMMToTable - 
+	*SDW -> CRIA TABELA E ADICIONA UMA PK COM O NOME DA TABELA. 
+	*RDB -> CRIA TABELA E ADICIONA AS PKS DAS TABELAS RELACIONADAS COMO PK.
+	FACT-FACT      -> SDW
+	FACT-DIMENSION -> SDW
+	FACT-BRIDGE    -> INVALIDO
+	DIMENSION-FACT -> SDW
+	DIMENSION-DIMENSION -> RDB
+	DIMENSION-BRIDGE -> INVALIDO
+	BRIDGE-FACT    -> INVALIDO
+	BRIDGE-BRIDGE    -> INVALIDO
+	BRIDGE-DIMENSION -> INVALIDO
+	
+4 - Rel_N1_FactDimension -> ADICIONA KEY DIMENSION COMO PK E FK EM FACT.
+5 -	Rel_N1_BridgeDimension -> ADICIONA KEY DIMENSION COMO PK E FK EM BRIDGE.	
+6 - Rel_N1_FactBridge ->  ADICIONA PK COM NOME DA BRIDGE COMO PK E FK EM FACT.
+7 - Rel_N1_DimensionDimension -> Adiciona Key Dimension como FK na Dimension.
+8 - Rel_N1_FactFact -> 	Adiciona Key Fact como FK na Fact.
+    Rel_N1_DimensionFact -> INVALIDO
+    Rel_N1_DimensionBridge -> INVALIDO
+	Rel_N1_BridgeFact -> INVALIDO	
+	Rel_N1_BridgeBridge -> Invalido.
+	
+9 - Rel_1N_FactFact -> 	Adiciona Key Fact como FK na Fact.
+10- Rel_1N_DimensionFact -> ADICIONA KEY DIMENSION COMO PK E FK EM FACT.   
+11-	Rel_1N_DimensionBridge -> ADICIONA KEY DIMENSION COMO PK E FK EM BRIDGE.
+12- Rel_1N_DimensionDimension -> ADICIONA KEY DIMENSION COMO FK NA DIMENSION.
+13- Rel_1N_BridgeFact -> ADICIONA PK COM NOME DA BRIDGE COMO PK E FK EM FACT.	
+	Rel_1N_FactBridge -> INVALIDO
+    Rel_1N_FactDimension -> INVALIDO    
+    Rel_1N_BridgeDimension -> INVALIDO.
+	Rel_1N_BridgeBRIDGE -> INVALIDO
