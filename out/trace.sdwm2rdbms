@@ -1,5 +1,177 @@
 <?xml version="1.0" encoding="ASCII"?>
-<sdwm2rdbms:SchemaToSchema xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:sdwm2rdbms="urn:sdwm2rdbms.ecore">
-  <p href="../metamodel/source.xmi#/"/>
-  <s href="target.xmi#_FseXEGDQEeOdZqvos7U7FA"/>
-</sdwm2rdbms:SchemaToSchema>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:sdwm2rdbms="urn:sdwm2rdbms.ecore">
+  <sdwm2rdbms:SchemaToSchema>
+    <p href="../metamodel/source.xmi#/"/>
+    <s href="target.xmi#_1hmzwGK4EeOdjJPlsTjOcQ"/>
+  </sdwm2rdbms:SchemaToSchema>
+  <sdwm2rdbms:TableToPkey>
+    <tab href="../metamodel/source.xmi#//@tables.0"/>
+    <k href="target.xmi#_1hmzwWK4EeOdjJPlsTjOcQ"/>
+  </sdwm2rdbms:TableToPkey>
+  <sdwm2rdbms:TableToTable>
+    <tab href="../metamodel/source.xmi#//@tables.0"/>
+    <t href="target.xmi#_1hna0GK4EeOdjJPlsTjOcQ"/>
+    <schemaSDWM href="../metamodel/source.xmi#/"/>
+    <schemaRDBMS href="target.xmi#_1hmzwGK4EeOdjJPlsTjOcQ"/>
+    <cl href="target.xmi#_1hna0WK4EeOdjJPlsTjOcQ"/>
+    <k href="target.xmi#_1hmzwWK4EeOdjJPlsTjOcQ"/>
+  </sdwm2rdbms:TableToTable>
+  <sdwm2rdbms:TableToPkey>
+    <tab href="../metamodel/source.xmi#//@tables.1"/>
+    <k href="target.xmi#_1hoB4GK4EeOdjJPlsTjOcQ"/>
+  </sdwm2rdbms:TableToPkey>
+  <sdwm2rdbms:TableToTable>
+    <tab href="../metamodel/source.xmi#//@tables.1"/>
+    <t href="target.xmi#_1hoB4WK4EeOdjJPlsTjOcQ"/>
+    <schemaSDWM href="../metamodel/source.xmi#/"/>
+    <schemaRDBMS href="target.xmi#_1hmzwGK4EeOdjJPlsTjOcQ"/>
+    <cl href="target.xmi#_1hoo8GK4EeOdjJPlsTjOcQ"/>
+    <k href="target.xmi#_1hoB4GK4EeOdjJPlsTjOcQ"/>
+  </sdwm2rdbms:TableToTable>
+  <sdwm2rdbms:Rel_N_1_FACT_DIM_One_to_Many>
+    <rel href="../metamodel/source.xmi#//@relationships.0"/>
+    <fk href="target.xmi#_1hoo8WK4EeOdjJPlsTjOcQ"/>
+    <schemaSDWM href="../metamodel/source.xmi#/"/>
+    <s href="../metamodel/source.xmi#//@tables.1"/>
+    <t href="../metamodel/source.xmi#//@tables.0"/>
+    <destTbl href="target.xmi#_1hoB4WK4EeOdjJPlsTjOcQ"/>
+    <schemaRDBMS href="target.xmi#_1hmzwGK4EeOdjJPlsTjOcQ"/>
+    <k href="target.xmi#_1hoB4GK4EeOdjJPlsTjOcQ"/>
+    <fc href="target.xmi#_1hpQAGK4EeOdjJPlsTjOcQ"/>
+    <pKey href="target.xmi#_1hmzwWK4EeOdjJPlsTjOcQ"/>
+    <srcTbl href="target.xmi#_1hna0GK4EeOdjJPlsTjOcQ"/>
+  </sdwm2rdbms:Rel_N_1_FACT_DIM_One_to_Many>
+  <sdwm2rdbms:Rel_N_1_DIM_FACT_One_to_Many>
+    <rel href="../metamodel/source.xmi#//@relationships.1"/>
+    <fk href="target.xmi#_1hp3EGK4EeOdjJPlsTjOcQ"/>
+    <schemaSDWM href="../metamodel/source.xmi#/"/>
+    <s href="../metamodel/source.xmi#//@tables.0"/>
+    <t href="../metamodel/source.xmi#//@tables.1"/>
+    <destTbl href="target.xmi#_1hoB4WK4EeOdjJPlsTjOcQ"/>
+    <schemaRDBMS href="target.xmi#_1hmzwGK4EeOdjJPlsTjOcQ"/>
+    <k href="target.xmi#_1hoB4GK4EeOdjJPlsTjOcQ"/>
+    <fc href="target.xmi#_1hp3EWK4EeOdjJPlsTjOcQ"/>
+    <pKey href="target.xmi#_1hmzwWK4EeOdjJPlsTjOcQ"/>
+    <srcTbl href="target.xmi#_1hna0GK4EeOdjJPlsTjOcQ"/>
+  </sdwm2rdbms:Rel_N_1_DIM_FACT_One_to_Many>
+  <sdwm2rdbms:TableToPkey>
+    <tab href="../metamodel/source.xmi#//@tables.2"/>
+    <k href="target.xmi#_1hqeIGK4EeOdjJPlsTjOcQ"/>
+  </sdwm2rdbms:TableToPkey>
+  <sdwm2rdbms:TableToTable>
+    <tab href="../metamodel/source.xmi#//@tables.2"/>
+    <t href="target.xmi#_1hqeIWK4EeOdjJPlsTjOcQ"/>
+    <schemaSDWM href="../metamodel/source.xmi#/"/>
+    <schemaRDBMS href="target.xmi#_1hmzwGK4EeOdjJPlsTjOcQ"/>
+    <cl href="target.xmi#_1hqeImK4EeOdjJPlsTjOcQ"/>
+    <k href="target.xmi#_1hqeIGK4EeOdjJPlsTjOcQ"/>
+  </sdwm2rdbms:TableToTable>
+  <sdwm2rdbms:TableToPkey>
+    <tab href="../metamodel/source.xmi#//@tables.3"/>
+    <k href="target.xmi#_1hrsQGK4EeOdjJPlsTjOcQ"/>
+  </sdwm2rdbms:TableToPkey>
+  <sdwm2rdbms:TableToTable>
+    <tab href="../metamodel/source.xmi#//@tables.3"/>
+    <t href="target.xmi#_1hrsQWK4EeOdjJPlsTjOcQ"/>
+    <schemaSDWM href="../metamodel/source.xmi#/"/>
+    <schemaRDBMS href="target.xmi#_1hmzwGK4EeOdjJPlsTjOcQ"/>
+    <cl href="target.xmi#_1hrsQmK4EeOdjJPlsTjOcQ"/>
+    <k href="target.xmi#_1hrsQGK4EeOdjJPlsTjOcQ"/>
+  </sdwm2rdbms:TableToTable>
+  <sdwm2rdbms:TableToPkey>
+    <tab href="../metamodel/source.xmi#//@tables.4"/>
+    <k href="target.xmi#_1hsTUGK4EeOdjJPlsTjOcQ"/>
+  </sdwm2rdbms:TableToPkey>
+  <sdwm2rdbms:TableToTable>
+    <tab href="../metamodel/source.xmi#//@tables.4"/>
+    <t href="target.xmi#_1hsTUWK4EeOdjJPlsTjOcQ"/>
+    <schemaSDWM href="../metamodel/source.xmi#/"/>
+    <schemaRDBMS href="target.xmi#_1hmzwGK4EeOdjJPlsTjOcQ"/>
+    <cl href="target.xmi#_1hsTUmK4EeOdjJPlsTjOcQ"/>
+    <k href="target.xmi#_1hsTUGK4EeOdjJPlsTjOcQ"/>
+  </sdwm2rdbms:TableToTable>
+  <sdwm2rdbms:TableToPkey>
+    <tab href="../metamodel/source.xmi#//@tables.5"/>
+    <k href="target.xmi#_1hs6YGK4EeOdjJPlsTjOcQ"/>
+  </sdwm2rdbms:TableToPkey>
+  <sdwm2rdbms:TableToTable>
+    <tab href="../metamodel/source.xmi#//@tables.5"/>
+    <t href="target.xmi#_1hs6YWK4EeOdjJPlsTjOcQ"/>
+    <schemaSDWM href="../metamodel/source.xmi#/"/>
+    <schemaRDBMS href="target.xmi#_1hmzwGK4EeOdjJPlsTjOcQ"/>
+    <cl href="target.xmi#_1hs6YmK4EeOdjJPlsTjOcQ"/>
+    <k href="target.xmi#_1hs6YGK4EeOdjJPlsTjOcQ"/>
+  </sdwm2rdbms:TableToTable>
+  <sdwm2rdbms:Rel_1_N_DIM_BRIDGE_One_to_Many>
+    <rel href="../metamodel/source.xmi#//@relationships.5"/>
+    <fk href="target.xmi#_1hthcGK4EeOdjJPlsTjOcQ"/>
+    <schemaSDWM href="../metamodel/source.xmi#/"/>
+    <s href="../metamodel/source.xmi#//@tables.5"/>
+    <t href="../metamodel/source.xmi#//@tables.4"/>
+    <destTbl href="target.xmi#_1hsTUWK4EeOdjJPlsTjOcQ"/>
+    <schemaRDBMS href="target.xmi#_1hmzwGK4EeOdjJPlsTjOcQ"/>
+    <k href="target.xmi#_1hsTUGK4EeOdjJPlsTjOcQ"/>
+    <fc href="target.xmi#_1hthcWK4EeOdjJPlsTjOcQ"/>
+    <pKey href="target.xmi#_1hs6YGK4EeOdjJPlsTjOcQ"/>
+    <srcTbl href="target.xmi#_1hs6YWK4EeOdjJPlsTjOcQ"/>
+  </sdwm2rdbms:Rel_1_N_DIM_BRIDGE_One_to_Many>
+  <sdwm2rdbms:TableToPkey>
+    <tab href="../metamodel/source.xmi#//@tables.6"/>
+    <k href="target.xmi#_1huIgGK4EeOdjJPlsTjOcQ"/>
+  </sdwm2rdbms:TableToPkey>
+  <sdwm2rdbms:TableToTable>
+    <tab href="../metamodel/source.xmi#//@tables.6"/>
+    <t href="target.xmi#_1huvkGK4EeOdjJPlsTjOcQ"/>
+    <schemaSDWM href="../metamodel/source.xmi#/"/>
+    <schemaRDBMS href="target.xmi#_1hmzwGK4EeOdjJPlsTjOcQ"/>
+    <cl href="target.xmi#_1huvkWK4EeOdjJPlsTjOcQ"/>
+    <k href="target.xmi#_1huIgGK4EeOdjJPlsTjOcQ"/>
+  </sdwm2rdbms:TableToTable>
+  <sdwm2rdbms:Rel_N_1_BRIDGE_DIM_Many_To_One>
+    <rel href="../metamodel/source.xmi#//@relationships.6"/>
+    <fk href="target.xmi#_1hvWoGK4EeOdjJPlsTjOcQ"/>
+    <schemaSDWM href="../metamodel/source.xmi#/"/>
+    <s href="../metamodel/source.xmi#//@tables.4"/>
+    <t href="../metamodel/source.xmi#//@tables.6"/>
+    <destTbl href="target.xmi#_1hsTUWK4EeOdjJPlsTjOcQ"/>
+    <schemaRDBMS href="target.xmi#_1hmzwGK4EeOdjJPlsTjOcQ"/>
+    <k href="target.xmi#_1hsTUGK4EeOdjJPlsTjOcQ"/>
+    <fc href="target.xmi#_1hvWoWK4EeOdjJPlsTjOcQ"/>
+    <pKey href="target.xmi#_1huIgGK4EeOdjJPlsTjOcQ"/>
+    <srcTbl href="target.xmi#_1huvkGK4EeOdjJPlsTjOcQ"/>
+  </sdwm2rdbms:Rel_N_1_BRIDGE_DIM_Many_To_One>
+  <sdwm2rdbms:RelMMToPkey>
+    <rel href="../metamodel/source.xmi#//@relationships.2"/>
+    <k href="target.xmi#_1hv9sGK4EeOdjJPlsTjOcQ"/>
+    <schemaSDWM href="../metamodel/source.xmi#/"/>
+    <s href="../metamodel/source.xmi#//@tables.2"/>
+    <t href="../metamodel/source.xmi#//@tables.1"/>
+  </sdwm2rdbms:RelMMToPkey>
+  <sdwm2rdbms:RelMMToTable>
+    <rel href="../metamodel/source.xmi#//@relationships.2"/>
+    <table href="target.xmi#_1hv9sWK4EeOdjJPlsTjOcQ"/>
+    <schemaSDWM href="../metamodel/source.xmi#/"/>
+    <s href="../metamodel/source.xmi#//@tables.2"/>
+    <t href="../metamodel/source.xmi#//@tables.1"/>
+    <schemaRDBMS href="target.xmi#_1hmzwGK4EeOdjJPlsTjOcQ"/>
+    <cl href="target.xmi#_1hwkwGK4EeOdjJPlsTjOcQ"/>
+    <k href="target.xmi#_1hv9sGK4EeOdjJPlsTjOcQ"/>
+  </sdwm2rdbms:RelMMToTable>
+  <sdwm2rdbms:RelMMToPkey>
+    <rel href="../metamodel/source.xmi#//@relationships.3"/>
+    <k href="target.xmi#_1hxL0GK4EeOdjJPlsTjOcQ"/>
+    <schemaSDWM href="../metamodel/source.xmi#/"/>
+    <s href="../metamodel/source.xmi#//@tables.1"/>
+    <t href="../metamodel/source.xmi#//@tables.3"/>
+  </sdwm2rdbms:RelMMToPkey>
+  <sdwm2rdbms:RelMMToTable>
+    <rel href="../metamodel/source.xmi#//@relationships.3"/>
+    <table href="target.xmi#_1hxL0WK4EeOdjJPlsTjOcQ"/>
+    <schemaSDWM href="../metamodel/source.xmi#/"/>
+    <s href="../metamodel/source.xmi#//@tables.1"/>
+    <t href="../metamodel/source.xmi#//@tables.3"/>
+    <schemaRDBMS href="target.xmi#_1hmzwGK4EeOdjJPlsTjOcQ"/>
+    <cl href="target.xmi#_1hxL0mK4EeOdjJPlsTjOcQ"/>
+    <k href="target.xmi#_1hxL0GK4EeOdjJPlsTjOcQ"/>
+  </sdwm2rdbms:RelMMToTable>
+</xmi:XMI>

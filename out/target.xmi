@@ -1,2 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<SimpleRDBMS:RdbmsSchema xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SimpleRDBMS="urn:SimpleRDBMS.ecore" xsi:schemaLocation="urn:SimpleRDBMS.ecore ../metamodel/SimpleRDBMS.ecore" rdbmsName="SDW" id="_FseXEGDQEeOdZqvos7U7FA"/>
+<SimpleRDBMS:RdbmsSchema xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:SimpleRDBMS="urn:SimpleRDBMS.ecore" xsi:schemaLocation="urn:SimpleRDBMS.ecore ../../UML2RDBMS/metamodel/SimpleRDBMS.ecore" rdbmsName="SDW" id="_1hmzwGK4EeOdjJPlsTjOcQ">
+  <rdbmsTable rdbmsName="DATE" id="_1hna0GK4EeOdjJPlsTjOcQ">
+    <rdbmsColumn rdbmsName="DATE_tid" id="_1hna0WK4EeOdjJPlsTjOcQ" rdbmsType="NUMBER" rdbmsKey="_1hmzwWK4EeOdjJPlsTjOcQ"/>
+    <rdbmsKey rdbmsName="DATE_pk" id="_1hmzwWK4EeOdjJPlsTjOcQ" rdbmsColumn="_1hna0WK4EeOdjJPlsTjOcQ" rdbmsRefersToOpposite="_1hoo8WK4EeOdjJPlsTjOcQ _1hp3EGK4EeOdjJPlsTjOcQ"/>
+  </rdbmsTable>
+  <rdbmsTable rdbmsName="HOMICIDE" id="_1hoB4WK4EeOdjJPlsTjOcQ">
+    <rdbmsColumn rdbmsName="HOMICIDE_tid" id="_1hoo8GK4EeOdjJPlsTjOcQ" rdbmsType="NUMBER" rdbmsKey="_1hoB4GK4EeOdjJPlsTjOcQ"/>
+    <rdbmsColumn rdbmsName="HOMICIDE_CASE_RECORD_DATE_DATE_tid" id="_1hpQAGK4EeOdjJPlsTjOcQ" rdbmsType="NUMBER" rdbmsKey="_1hoB4GK4EeOdjJPlsTjOcQ" rdbmsForeignKey="_1hoo8WK4EeOdjJPlsTjOcQ"/>
+    <rdbmsColumn rdbmsName="DATE_HOMICIDE_DATE_HOMICIDE_tid" id="_1hp3EWK4EeOdjJPlsTjOcQ" rdbmsType="NUMBER" rdbmsKey="_1hoB4GK4EeOdjJPlsTjOcQ" rdbmsForeignKey="_1hp3EGK4EeOdjJPlsTjOcQ"/>
+    <rdbmsForeignKey rdbmsName="HOMICIDE_CASE_RECORD_DATE_DATE" id="_1hoo8WK4EeOdjJPlsTjOcQ" rdbmsRefersTo="_1hmzwWK4EeOdjJPlsTjOcQ" rdbmsColumn="_1hpQAGK4EeOdjJPlsTjOcQ"/>
+    <rdbmsForeignKey rdbmsName="DATE_HOMICIDE_DATE_HOMICIDE" id="_1hp3EGK4EeOdjJPlsTjOcQ" rdbmsRefersTo="_1hmzwWK4EeOdjJPlsTjOcQ" rdbmsColumn="_1hp3EWK4EeOdjJPlsTjOcQ"/>
+    <rdbmsKey rdbmsName="HOMICIDE_pk" id="_1hoB4GK4EeOdjJPlsTjOcQ" rdbmsColumn="_1hoo8GK4EeOdjJPlsTjOcQ _1hpQAGK4EeOdjJPlsTjOcQ _1hp3EWK4EeOdjJPlsTjOcQ"/>
+  </rdbmsTable>
+  <rdbmsTable rdbmsName="VICTIM" id="_1hqeIWK4EeOdjJPlsTjOcQ">
+    <rdbmsColumn rdbmsName="VICTIM_tid" id="_1hqeImK4EeOdjJPlsTjOcQ" rdbmsType="NUMBER" rdbmsKey="_1hqeIGK4EeOdjJPlsTjOcQ"/>
+    <rdbmsKey rdbmsName="VICTIM_pk" id="_1hqeIGK4EeOdjJPlsTjOcQ" rdbmsColumn="_1hqeImK4EeOdjJPlsTjOcQ"/>
+  </rdbmsTable>
+  <rdbmsTable rdbmsName="DEFENDANT" id="_1hrsQWK4EeOdjJPlsTjOcQ">
+    <rdbmsColumn rdbmsName="DEFENDANT_tid" id="_1hrsQmK4EeOdjJPlsTjOcQ" rdbmsType="NUMBER" rdbmsKey="_1hrsQGK4EeOdjJPlsTjOcQ"/>
+    <rdbmsKey rdbmsName="DEFENDANT_pk" id="_1hrsQGK4EeOdjJPlsTjOcQ" rdbmsColumn="_1hrsQmK4EeOdjJPlsTjOcQ"/>
+  </rdbmsTable>
+  <rdbmsTable rdbmsName="ARMS" id="_1hsTUWK4EeOdjJPlsTjOcQ">
+    <rdbmsColumn rdbmsName="ARMS_tid" id="_1hsTUmK4EeOdjJPlsTjOcQ" rdbmsType="NUMBER" rdbmsKey="_1hsTUGK4EeOdjJPlsTjOcQ"/>
+    <rdbmsColumn rdbmsName="ARM_ARMS_tid" id="_1hthcWK4EeOdjJPlsTjOcQ" rdbmsType="NUMBER" rdbmsKey="_1hsTUGK4EeOdjJPlsTjOcQ" rdbmsForeignKey="_1hthcGK4EeOdjJPlsTjOcQ"/>
+    <rdbmsColumn rdbmsName="ARMS_TESTE_BRIDGE_N_1_tid" id="_1hvWoWK4EeOdjJPlsTjOcQ" rdbmsType="NUMBER" rdbmsKey="_1hsTUGK4EeOdjJPlsTjOcQ" rdbmsForeignKey="_1hvWoGK4EeOdjJPlsTjOcQ"/>
+    <rdbmsForeignKey rdbmsName="ARM_ARMS" id="_1hthcGK4EeOdjJPlsTjOcQ" rdbmsRefersTo="_1hs6YGK4EeOdjJPlsTjOcQ" rdbmsColumn="_1hthcWK4EeOdjJPlsTjOcQ"/>
+    <rdbmsForeignKey rdbmsName="ARMS_TESTE_BRIDGE_N_1" id="_1hvWoGK4EeOdjJPlsTjOcQ" rdbmsRefersTo="_1huIgGK4EeOdjJPlsTjOcQ" rdbmsColumn="_1hvWoWK4EeOdjJPlsTjOcQ"/>
+    <rdbmsKey rdbmsName="ARMS_pk" id="_1hsTUGK4EeOdjJPlsTjOcQ" rdbmsColumn="_1hsTUmK4EeOdjJPlsTjOcQ _1hthcWK4EeOdjJPlsTjOcQ _1hvWoWK4EeOdjJPlsTjOcQ"/>
+  </rdbmsTable>
+  <rdbmsTable rdbmsName="ARM" id="_1hs6YWK4EeOdjJPlsTjOcQ">
+    <rdbmsColumn rdbmsName="ARM_tid" id="_1hs6YmK4EeOdjJPlsTjOcQ" rdbmsType="NUMBER" rdbmsKey="_1hs6YGK4EeOdjJPlsTjOcQ"/>
+    <rdbmsKey rdbmsName="ARM_pk" id="_1hs6YGK4EeOdjJPlsTjOcQ" rdbmsColumn="_1hs6YmK4EeOdjJPlsTjOcQ" rdbmsRefersToOpposite="_1hthcGK4EeOdjJPlsTjOcQ"/>
+  </rdbmsTable>
+  <rdbmsTable rdbmsName="TESTE_BRIDGE_N_1" id="_1huvkGK4EeOdjJPlsTjOcQ">
+    <rdbmsColumn rdbmsName="TESTE_BRIDGE_N_1_tid" id="_1huvkWK4EeOdjJPlsTjOcQ" rdbmsType="NUMBER" rdbmsKey="_1huIgGK4EeOdjJPlsTjOcQ"/>
+    <rdbmsKey rdbmsName="TESTE_BRIDGE_N_1_pk" id="_1huIgGK4EeOdjJPlsTjOcQ" rdbmsColumn="_1huvkWK4EeOdjJPlsTjOcQ" rdbmsRefersToOpposite="_1hvWoGK4EeOdjJPlsTjOcQ"/>
+  </rdbmsTable>
+  <rdbmsTable rdbmsName="VICTIMHOMICIDE" id="_1hv9sWK4EeOdjJPlsTjOcQ">
+    <rdbmsColumn rdbmsName="VICTIMHOMICIDE_tid" id="_1hwkwGK4EeOdjJPlsTjOcQ" rdbmsType="NUMBER" rdbmsKey="_1hv9sGK4EeOdjJPlsTjOcQ"/>
+    <rdbmsKey rdbmsName="VICTIMHOMICIDE_pk" id="_1hv9sGK4EeOdjJPlsTjOcQ" rdbmsColumn="_1hwkwGK4EeOdjJPlsTjOcQ"/>
+  </rdbmsTable>
+  <rdbmsTable rdbmsName="HOMICIDEDEFENDANT" id="_1hxL0WK4EeOdjJPlsTjOcQ">
+    <rdbmsColumn rdbmsName="HOMICIDEDEFENDANT_tid" id="_1hxL0mK4EeOdjJPlsTjOcQ" rdbmsType="NUMBER" rdbmsKey="_1hxL0GK4EeOdjJPlsTjOcQ"/>
+    <rdbmsKey rdbmsName="HOMICIDEDEFENDANT_pk" id="_1hxL0GK4EeOdjJPlsTjOcQ" rdbmsColumn="_1hxL0mK4EeOdjJPlsTjOcQ"/>
+  </rdbmsTable>
+</SimpleRDBMS:RdbmsSchema>
